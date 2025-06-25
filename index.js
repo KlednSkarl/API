@@ -21,7 +21,7 @@ const config = {
   }
 };
 
-app.get('/loans', (req, res) => {
+app.get('/', (req, res) => {
   res.send('✅ RESTful API is running. Try /loans');
 });
 
