@@ -21,6 +21,10 @@ const config = {
   }
 };
 
+app.get('/', (req, res) => {
+  res.send('✅ RESTful API is running. Try /loans');
+});
+
 app.get('/loans', async (req, res) => {
   try {
     const pool = await sql.connect(config);
