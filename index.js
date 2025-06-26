@@ -1,5 +1,6 @@
 // server.js
 // Install this first before running the query npm install express mssql cors
+require('dotenv').config();
 const express = require('express');
 const sql = require('mssql');
 const cors = require('cors');
@@ -10,7 +11,7 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 
 const config = {
-  user: 'SysDev',
+  user: process.env.DB_USER,
   password: 'Sys2023Dev@BMS',
   server: '116.50.222.51',
   port: 50130,
@@ -37,6 +38,4 @@ app.get('/loans', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`✅ API running at http://localhost:${port}/loans`);
-});
+ 
