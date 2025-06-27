@@ -12,19 +12,17 @@ app.use(cors());
 
 const config = {
   user: process.env.DB_USER,
-  password: 'Sys2023Dev@BMS',
-  server: '116.50.222.51',
-  port: 50130,
-  database: 'TCM_CSS',
+  password: process.env.DB_PASSWORD,
+  server: process.env.DB_SERVER,
+  port: parseInt(process.env.DB_PORT),
+  database: process.env.DB_DATABASE,
   options: {
     encrypt: false,
     trustServerCertificate: true
   }
 };
 
-app.get('/', (req, res) => {
-  res.send('✅ RESTful API is running. Try /loans');
-});
+ 
 
 app.get('/loans', async (req, res) => {
   try {
