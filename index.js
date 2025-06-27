@@ -10,6 +10,12 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 
+app.get('/',(req,res) =>{
+  res.send('Meron');
+
+});
+
+
 const config = {
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
