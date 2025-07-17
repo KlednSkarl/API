@@ -25,13 +25,15 @@ const config = {
     trustServerCertificate: true
   }
 };
+//credentials above
 
- 
+
+
 
 app.get('/loans', async (req, res) => {
   try {
     const pool = await sql.connect(config);
-    const result = await pool.request().query('SELECT * FROM CS_tblLoan');
+    const result = await pool.request().query('SELECT * FROM H_tblHouse');
     res.json(result.recordset);
   } catch (err) {
     res.status(500).send('Database Error');
